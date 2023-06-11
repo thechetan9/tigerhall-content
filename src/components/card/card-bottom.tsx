@@ -1,8 +1,8 @@
-import React, { FC } from 'react';
-import { Bookmark, Share2 } from 'react-feather';
-import { Box, Heading, Text as TextBlock, Icon } from '@chakra-ui/react';
+import React, { FC } from "react";
+import { Bookmark, Share2 } from "react-feather";
+import { Box, Heading, Text as TextBlock, Icon } from "@chakra-ui/react";
 
-import { IContent } from '../../../types/content.types';
+import { IContent } from "../../types/content.types";
 
 export interface IContentBottom {
   content: IContent;
@@ -23,10 +23,21 @@ const ContentBottom: FC<IContentBottom> = ({ content }) => {
       <Heading as="h5" size="xs" color="gray.700">
         {categoryName}
       </Heading>
-      <Heading as="h1" size="md" color="black" mb="8px" textTransform="capitalize">
+      <Heading
+        as="h1"
+        size="md"
+        color="black"
+        mb="8px"
+        textTransform="capitalize"
+      >
         {name}
       </Heading>
-      <TextBlock fontSize="12px" color="gray.800" fontWeight={500} lineHeight="12px">
+      <TextBlock
+        fontSize="12px"
+        color="gray.800"
+        fontWeight={500}
+        lineHeight="12px"
+      >
         {firstName} {lastName}
       </TextBlock>
       <TextBlock fontSize="12px" fontWeight="700">

@@ -1,9 +1,9 @@
-import React, { FC } from 'react';
-import { GridItem } from '@chakra-ui/react';
+import React, { FC } from "react";
+import { GridItem } from "@chakra-ui/react";
 
-import TopBanner from './top-banner/top-banner';
-import ContentBottom from './content-bottom/content-bottom';
-import { IContent } from '../../types/content.types';
+import TopBanner from "./card-banner";
+import ContentBottom from "./card-bottom";
+import { IContent } from "../../types/content.types";
 
 export interface IContentCard {
   content: IContent;

@@ -1,16 +1,16 @@
-import React, { FC } from 'react';
-import { Headphones, Clock } from 'react-feather';
-import { Box, Text as TextBlock, Icon } from '@chakra-ui/react';
+import React, { FC } from "react";
+import { Headphones, Clock } from "react-feather";
+import { Box, Text as TextBlock, Icon } from "@chakra-ui/react";
 
-import exampleGraph from '../../../img/graph.svg';
+import exampleGraph from "../../img/graph.svg";
 
 export interface ITopBanner {
   imageUrl: string;
 }
 
-const TopBanner: FC<ITopBanner> = ({ imageUrl }) => {
+const CardBanner: FC<ITopBanner> = ({ imageUrl }) => {
   const url = new URL(imageUrl);
-  const resizeInject = 'resize/250x';
+  const resizeInject = "resize/250x";
   const { origin, pathname } = url;
 
   return (
@@ -96,4 +96,4 @@ const TopBanner: FC<ITopBanner> = ({ imageUrl }) => {
   );
 };
 
-export default TopBanner;
+export default CardBanner;

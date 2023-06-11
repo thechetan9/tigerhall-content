@@ -1,15 +1,18 @@
-import React, { FC, useCallback } from 'react';
-import { Search as SearchIcon } from 'react-feather';
-import { Input, InputGroup, InputLeftElement } from '@chakra-ui/react';
+import React, { FC, useCallback } from "react";
+import { SearchResults as SearchIcon } from "react-feather";
+import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
 
 export interface ISearchData {
   onSearchData: (e: string) => void;
 }
 
-const Search: FC<ISearchData> = ({ onSearchData }) => {
-  const handleSearchData = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    onSearchData(e.target.value);
-  }, []);
+const SearchResults: FC<ISearchData> = ({ onSearchData }) => {
+  const handleSearchData = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      onSearchData(e.target.value);
+    },
+    []
+  );
 
   return (
     <InputGroup marginBottom="24px">
@@ -28,4 +31,4 @@ const Search: FC<ISearchData> = ({ onSearchData }) => {
   );
 };
 
-export default Search;
+export default SearchResults;

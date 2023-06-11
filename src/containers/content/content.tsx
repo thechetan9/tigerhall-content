@@ -1,17 +1,17 @@
-import React, { FC, useCallback, useState } from 'react';
-import { Container, Grid, Text as TextBlock } from '@chakra-ui/react';
-import { useQuery } from '@apollo/client';
-import LodashDebounce from 'lodash/debounce';
+import React, { FC, useCallback, useState } from "react";
+import { Container, Grid, Text as TextBlock } from "@chakra-ui/react";
+import { useQuery } from "@apollo/client";
+import LodashDebounce from "lodash/debounce";
 
-import Search from '../../components/search/search';
-import ContentCard from '../../components/content-card/content-card';
-import LoadingSkeleton from '../../components/content-card/loading-skeleton/loading-skeleton';
-import { GET_CONTENTS } from '../../query/get-contents';
-import { CONTENT_TYPES } from '../../constants/content-types';
-import { IContent } from '../../types/content.types';
+import SearchResults from "../../components/search/searchResults";
+import ContentCard from "../../components/card/content-card";
+import LoadingSkeleton from "../../components/card/card-skeleton";
+import { GET_CONTENTS } from "../../query/get-contents";
+import { CONTENT_TYPES } from "../../constants/content-types";
+import { IContent } from "../../types/content.types";
 
 const ContentWrapper: FC = () => {
-  const [keyword, setKeyword] = useState('');
+  const [keyword, setKeyword] = useState("");
   const { loading, error, data } = useQuery(GET_CONTENTS, {
     variables: {
       filter: {
@@ -32,7 +32,7 @@ const ContentWrapper: FC = () => {
 
   return (
     <Container>
-      <Search onSearchData={debouncedHandleKeyWordChange} />
+      <SearchResults onSearchData={debouncedHandleKeyWordChange} />
       <Grid templateColumns="repeat(1, 1fr)" gap={6}>
         {loading && <LoadingSkeleton loadingArray={5} />}
         {!loading && edges?.length > 0 && (
@@ -49,7 +49,7 @@ const ContentWrapper: FC = () => {
         )}
         {loading && error && (
           <TextBlock fontSize="12px" fontWeight="700" color="white" ml="4px">
-            Sorry, there is an error occured
+            Something went wrong!!!
           </TextBlock>
         )}
       </Grid>

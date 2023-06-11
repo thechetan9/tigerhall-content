@@ -1,12 +1,15 @@
-import React, { FC, useMemo } from 'react';
-import { Skeleton, SkeletonText, Box } from '@chakra-ui/react';
+import React, { FC, useMemo } from "react";
+import { Skeleton, SkeletonText, Box } from "@chakra-ui/react";
 
 export interface ILoadingSkeleton {
   loadingArray: number;
 }
 
-const LoadingSkeleton: FC<ILoadingSkeleton> = ({ loadingArray }) => {
-  const loadingArrayByPager = useMemo(() => new Array(loadingArray).fill(''), [loadingArray]);
+const CardSkeleton: FC<ILoadingSkeleton> = ({ loadingArray }) => {
+  const loadingArrayByPager = useMemo(
+    () => new Array(loadingArray).fill(""),
+    [loadingArray]
+  );
 
   return (
     <>
@@ -20,4 +23,4 @@ const LoadingSkeleton: FC<ILoadingSkeleton> = ({ loadingArray }) => {
   );
 };
 
-export default LoadingSkeleton;
+export default CardSkeleton;
