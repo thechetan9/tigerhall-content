@@ -5,11 +5,11 @@ import TopBanner from "./card-banner";
 import ContentBottom from "./card-bottom";
 import { CardContent } from "../../types/content.types";
 
-export interface IContentCard {
+export interface CardLoadSkeleton {
   content: CardContent;
 }
 
-const ContentCard: FC<IContentCard> = ({ content }) => {
+const ContentCard: FC<CardLoadSkeleton> = ({ content }) => {
   const { image } = content || {};
 
   return (

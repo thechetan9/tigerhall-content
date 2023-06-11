@@ -4,6 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+Add the following to your .env file on root of your application
+
+REACT_APP_API_SERVICES=https://api.tigerhall.net/v2/
+
 In the project directory, you can run:
 
 ### `npm start`

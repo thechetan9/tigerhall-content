@@ -44,7 +44,7 @@ const ContentWrapper: FC = () => {
         )}
         {!loading && edges?.length === 0 && (
           <TextBlock fontSize="12px" fontWeight="700" color="white" ml="4px">
-            Oops, this is not available at the moment.
+            Oops, this is not available at the moment
           </TextBlock>
         )}
         {loading && error && (

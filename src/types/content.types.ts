@@ -1,14 +1,14 @@
-export interface IImage {
+export interface CardImage {
   uri: string;
   __typename: string;
 }
 
-export interface IProductCategory {
+export interface CardIProductCategory {
   name: string;
   __typename: string;
 }
 
-export interface IExpert {
+export interface CardExpert {
   firstName: string;
   lastName: string;
   company: string;
@@ -16,11 +16,14 @@ export interface IExpert {
   __typename: string;
 }
 
-export interface CardContent extends IImage, IProductCategory, IExpert {
+export interface CardContent
+  extends CardImage,
+    CardIProductCategory,
+    CardExpert {
   name: string;
   id: string;
-  categories: [IProductCategory];
-  experts: [IExpert];
-  image: IImage;
+  categories: [CardIProductCategory];
+  experts: [CardExpert];
+  image: CardImage;
   __typename: string;
 }
