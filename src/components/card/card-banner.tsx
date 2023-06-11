@@ -15,7 +15,7 @@ const CardBanner: FC<ITopBanner> = ({ imageUrl }) => {
 
   return (
     <Box
-      height="120px"
+      height="320px"
       backgroundImage={`${origin}/${resizeInject}${pathname}`}
       backgroundRepeat="no-repeat"
       backgroundSize="cover"
@@ -33,12 +33,18 @@ const CardBanner: FC<ITopBanner> = ({ imageUrl }) => {
         position="absolute"
         padding="8px"
         borderTopLeftRadius="8px"
+        borderBottomRightRadius="5px"
       >
         <Box display="flex">
           <img src={exampleGraph} />
-          <TextBlock fontSize="12px" fontWeight="700" color="gray.900" ml="4px">
-            {/* TODO: need to integrate with real data */}
-            30% Completed
+          <TextBlock
+            fontSize="12px"
+            fontWeight="700"
+            color="gray.900"
+            ml="4px"
+            borderRadius="10px"
+          >
+            10% Completed
           </TextBlock>
         </Box>
       </Box>
@@ -69,13 +75,12 @@ const CardBanner: FC<ITopBanner> = ({ imageUrl }) => {
         <Box display="flex" alignItems="center" justifyContent="center">
           <Icon as={Clock} fontSize="14px" color="white" />
           <TextBlock size="xs" ml="4px" color="white" fontWeight="700">
-            {/* TODO: need to integrate with real data */}
             20 m
           </TextBlock>
         </Box>
       </Box>
       <Box
-        width="30%"
+        width="25%"
         height="2px"
         bg="orange.600"
         position="absolute"

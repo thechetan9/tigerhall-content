@@ -1,5 +1,5 @@
 import React, { FC, useCallback } from "react";
-import { SearchResults as SearchIcon } from "react-feather";
+import { Search as SearchIcon } from "react-feather";
 import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
 
 export interface ISearchData {
