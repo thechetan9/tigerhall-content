@@ -1,15 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import { ChakraProvider } from '@chakra-ui/react';
+
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { theme } from './theme';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+import './index.css';
+
+const client = new ApolloClient({
+  uri: process.env.REACT_APP_API_SERVICES,
+  cache: new InMemoryCache(),
+});
+
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
-    <App />
+    <ApolloProvider client={client}>
+      <ChakraProvider theme={theme}>
+        <App />
+      </ChakraProvider>
+    </ApolloProvider>
   </React.StrictMode>
 );
 
