@@ -8,7 +8,7 @@ import ContentCard from "../../components/card/content-card";
 import LoadingSkeleton from "../../components/card/card-skeleton";
 import { GET_CONTENTS } from "../../query/get-contents";
 import { CONTENT_TYPES } from "../../constants/content-types";
-import { IContent } from "../../types/content.types";
+import { CardContent } from "../../types/content.types";
 
 const ContentWrapper: FC = () => {
   const [keyword, setKeyword] = useState("");
@@ -37,14 +37,14 @@ const ContentWrapper: FC = () => {
         {loading && <LoadingSkeleton loadingArray={5} />}
         {!loading && edges?.length > 0 && (
           <>
-            {edges?.map((item: IContent) => (
+            {edges?.map((item: CardContent) => (
               <ContentCard key={item.id} content={item} />
             ))}
           </>
         )}
         {!loading && edges?.length === 0 && (
           <TextBlock fontSize="12px" fontWeight="700" color="white" ml="4px">
-            Sorry, there is no data to show
+            Oops, this is not available at the moment.
           </TextBlock>
         )}
         {loading && error && (

@@ -2,13 +2,13 @@ import React, { FC } from "react";
 import { Bookmark, Share2 } from "react-feather";
 import { Box, Heading, Text as TextBlock, Icon } from "@chakra-ui/react";
 
-import { IContent } from "../../types/content.types";
+import { CardContent } from "../../types/content.types";
 
-export interface IContentBottom {
-  content: IContent;
+export interface CardContentBottom {
+  content: CardContent;
 }
 
-const ContentBottom: FC<IContentBottom> = ({ content }) => {
+const ContentBottom: FC<CardContentBottom> = ({ content }) => {
   const { experts, categories, name } = content;
   const { firstName, lastName, company } = experts[0];
   const { name: categoryName } = categories[0];

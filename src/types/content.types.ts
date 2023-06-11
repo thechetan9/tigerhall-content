@@ -16,7 +16,7 @@ export interface IExpert {
   __typename: string;
 }
 
-export interface IContent extends IImage, IProductCategory, IExpert {
+export interface CardContent extends IImage, IProductCategory, IExpert {
   name: string;
   id: string;
   categories: [IProductCategory];

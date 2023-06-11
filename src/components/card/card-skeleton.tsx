@@ -1,11 +1,11 @@
 import React, { FC, useMemo } from "react";
 import { Skeleton, SkeletonText, Box } from "@chakra-ui/react";
 
-export interface ILoadingSkeleton {
+export interface CardLoadSkeleton {
   loadingArray: number;
 }
 
-const CardSkeleton: FC<ILoadingSkeleton> = ({ loadingArray }) => {
+const CardSkeleton: FC<CardLoadSkeleton> = ({ loadingArray }) => {
   const loadingArrayByPager = useMemo(
     () => new Array(loadingArray).fill(""),
     [loadingArray]

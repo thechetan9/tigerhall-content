@@ -2,11 +2,11 @@ import React, { FC, useCallback } from "react";
 import { Search as SearchIcon } from "react-feather";
 import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
 
-export interface ISearchData {
+export interface ContentSearch {
   onSearchData: (e: string) => void;
 }
 
-const SearchResults: FC<ISearchData> = ({ onSearchData }) => {
+const SearchResults: FC<ContentSearch> = ({ onSearchData }) => {
   const handleSearchData = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       onSearchData(e.target.value);
@@ -20,11 +20,11 @@ const SearchResults: FC<ISearchData> = ({ onSearchData }) => {
         <SearchIcon color="white" />
       </InputLeftElement>
       <Input
-        placeholder=""
+        placeholder="Search..."
         borderColor="gray.700"
         backgroundColor="gray.900"
         color="white"
-        focusBorderColor="gray.700"
+        focusBorderColor="white.700"
         onChange={handleSearchData}
       />
     </InputGroup>

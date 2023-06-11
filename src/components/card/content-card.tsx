@@ -3,10 +3,10 @@ import { GridItem } from "@chakra-ui/react";
 
 import TopBanner from "./card-banner";
 import ContentBottom from "./card-bottom";
-import { IContent } from "../../types/content.types";
+import { CardContent } from "../../types/content.types";
 
 export interface IContentCard {
-  content: IContent;
+  content: CardContent;
 }
 
 const ContentCard: FC<IContentCard> = ({ content }) => {

@@ -4,11 +4,11 @@ import { Box, Text as TextBlock, Icon } from "@chakra-ui/react";
 
 import exampleGraph from "../../img/graph.svg";
 
-export interface ITopBanner {
+export interface CardBanner {
   imageUrl: string;
 }
 
-const CardBanner: FC<ITopBanner> = ({ imageUrl }) => {
+const CardBanner: FC<CardBanner> = ({ imageUrl }) => {
   const url = new URL(imageUrl);
   const resizeInject = "resize/250x";
   const { origin, pathname } = url;
